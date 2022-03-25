@@ -6,4 +6,6 @@ $(() => {
   $('#sign-up-form').on('submit', authEvents.onSignUp)
   $('#sign-in-form').on('submit', authEvents.onSignIn)
   $('#sign-out-btn').on('click', authEvents.onSignOut)
+  $('#new-game-btn').on('click', authEvents.startNewGame)
+  $('.cell').on('click', authEvents.onCellClick)
 })

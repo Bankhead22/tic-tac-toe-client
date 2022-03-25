@@ -4,31 +4,52 @@ const signUp = (data) => {
   console.log(store)
   return $.ajax({
     method: 'POST',
-    url: 'https://library-express-api.herokuapp.com/sign-up',
+    url: 'https://tic-tac-toe-api-development.herokuapp.com/sign-up',
     data
   })
 }
 
-const signIn = function (data) {
+const signIn = (data) => {
   return $.ajax({
     method: 'POST',
-    url: 'https://library-express-api.herokuapp.com/sign-in',
+    url: 'https://tic-tac-toe-api-development.herokuapp.com/sign-in',
     data
   })
 }
 
-const signOut = function () {
+const signOut = () => {
   return $.ajax({
     method: 'DELETE',
-    url: 'https://library-express-api.herokuapp.com/sign-out',
+    url: 'https://tic-tac-toe-api-development.herokuapp.com/sign-out',
     headers: {
       Authorization: 'Bearer ' + store.user.token
     }
   })
 }
 
+const newGame = () => {
+  return $.ajax({
+    method: 'POST',
+    url: 'https://tic-tac-toe-api-development.herokuapp.com/games',
+    data: '{}',
+    headers: {
+      Authorization: 'Bearer ' + store.user.token
+    }
+  })
+}
+
+const cellClick = (data, id) => {
+  return $.ajax({
+    method: 'PATCH',
+    url: 'https://tic-tac-toe-api-development.herokuapp.com/games/' + id,
+    data
+  })
+}
+
 module.exports = {
   signUp,
   signIn,
-  signOut
+  signOut,
+  newGame,
+  cellClick
 }

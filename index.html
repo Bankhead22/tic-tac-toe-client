@@ -12,23 +12,52 @@
       <script src="public/application.js" type="text/javascript" charset="utf-8" defer></script>
     </head>
     <body>
-      <h1>Tic-Tac-Toe</h1>
+      <!-- Authorization(sign in/out) -->
+      <section>
+        <h1>Tic-Tac-Toe</h1>
         <h3>Sign Up</h3>
-        <form id="sign-up-form">
-          <input name="credentials[email]" type="email" placeholder="Email">
-          <input name="credentials[password]" type="password" placeholder="Enter password">
-          <input name="credentials[password_confirmation]" type="password" placeholder="Re-enter password">
-          <button type="submit">Sign Up</button>
-        </form>
-
+          <form id="sign-up-form">
+            <input name="credentials[email]" type="email" placeholder="Email">
+            <input name="credentials[password]" type="password" placeholder="Enter password">
+            <input name="credentials[password_confirmation]" type="password" placeholder="Re-enter password">
+            <button type="submit">Sign Up</button>
+          </form>
+      
         <h3>Sign In</h3>
-        <form id="sign-in-form">
-          <input name="credentials[email]" type="email" placeholder="Email">
-          <input name="credentials[password]" type="password" placeholder="Enter password">
-          <button type="submit">Sign In</button>
-          <button id="sign-out-btn">Sign Out</button>
-        </form>
+          <form id="sign-in-form">
+            <input name="credentials[email]" type="email" placeholder="Email">
+            <input name="credentials[password]" type="password" placeholder="Enter password">
+            <button id="sign-in-btn" type="submit">Sign In</button>
+          </form>
 
-       <section id="auth-display"></section> 
+          <button id="sign-out-btn">Sign Out</button>
+ 
+          <section id="auth-display"></section> 
+      </section>
+
+    
+
+      <!-- Game board and new/restart game -->
+      <section>
+       <button id="new-game-btn">New Game</button>
+       <section id="game-board">
+          <div class="container">
+              <div data-cell-index="0" class="cell"></div>
+              <div data-cell-index="1" class="cell"></div>
+              <div data-cell-index="2" class="cell"></div>
+              <div data-cell-index="3" class="cell"></div>
+              <div data-cell-index="4" class="cell"></div>
+              <div data-cell-index="5" class="cell"></div>
+              <div data-cell-index="6" class="cell"></div>
+              <div data-cell-index="7" class="cell"></div>
+              <div data-cell-index="8" class="cell"></div>
+          </div>
+          <section id="game-display"></section>
+        </section>
+
+        <button id="restart-btn">Restart Game</button>
+      </section>
     </body>
+
+
 </html>

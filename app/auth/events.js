@@ -39,8 +39,24 @@ const onSignOut = () => {
     .catch(() => authUi.onSignOutFailure())
 }
 
+const startNewGame = () => {
+  authApi
+    .newGame()
+    .then((response) => authUi.onNewGameSuccess(response))
+    .catch(() => authUi.onNewGameFailure())
+}
+
+const onCellClick = () => {
+  authApi
+    .cellClick()
+    .then(() => authUi.onCellClickSuccess())
+    .catch(() => authUi.onCellClickFailure())
+}
+
 module.exports = {
   onSignUp,
   onSignIn,
-  onSignOut
+  onSignOut,
+  startNewGame,
+  onCellClick
 }

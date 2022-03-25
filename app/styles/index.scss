@@ -1,5 +1,46 @@
 @import '~bootstrap/scss/bootstrap';
+@import url('https://fonts.googleapis.com/css2?family=Playfair+Display&display=swap');
 
+$font-family: 'Playfair Display', serif;
+$body-bg-color: grey;
+$box-bg-color: lightgrey;
+$box-border-color: white;
+$alt-bg-color: cyan;
+body {
+    font-family: "Arial", sans-serif;
+}
+
+section {
+    text-align: center;
+}
+
+.container {
+    display: grid;
+    grid-template-columns: repeat(3, auto);
+    width: 306px;
+    margin: 50px auto;
+}
+
+.cell {
+    font-family: "Permanent Marker", cursive;
+    width: 100px;
+    height: 100px;
+    box-shadow: 0 0 0 1px #333333;
+    border: 1px solid #333333;
+    cursor: pointer;
+
+    line-height: 100px;
+    font-size: 60px;
+}
 #sign-out-btn {
+    display: none;
+}
+#new-game-btn {
+    display: none;
+}
+#restart-btn {
+    display: none;
+}
+#game-board{
     display: none;
 }
