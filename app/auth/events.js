@@ -1,5 +1,5 @@
-const authUi = require('./ui.js')
-const authApi = require('./api.js')
+const ui = require('./ui.js')
+const api = require('./api.js')
 const getFormFields = require('../../lib/get-form-fields.js')
 
 const onSignUp = (event) => {
@@ -12,10 +12,10 @@ const onSignUp = (event) => {
   if (data.credentials.password !== data.credentials.password_confirmation) {
     $('#auth-display').html('<p>Passwords do not match</p>')
   } else {
-    authApi
+    api
       .signUp(data)
-      .then(() => authUi.onSignUpSuccess())
-      .catch(() => authUi.onSignUpFailure())
+      .then(() => ui.onSignUpSuccess())
+      .catch(() => ui.onSignUpFailure())
   }
 }
 
@@ -26,37 +26,22 @@ const onSignIn = (event) => {
   const data = getFormFields(form)
   console.log(data)
 
-  authApi
+  api
     .signIn(data)
-    .then((response) => authUi.onSignInSuccess(response))
-    .catch(() => authUi.onSignInFailure())
+    .then((response) => ui.onSignInSuccess(response))
+    .catch(() => ui.onSignInFailure())
 }
 
 const onSignOut = () => {
-  authApi
+  api
     .signOut()
-    .then(() => authUi.onSignOutSuccess())
-    .catch(() => authUi.onSignOutFailure())
-}
-
-const startNewGame = () => {
-  authApi
-    .newGame()
-    .then((response) => authUi.onNewGameSuccess(response))
-    .catch(() => authUi.onNewGameFailure())
-}
-
-const onCellClick = () => {
-  authApi
-    .cellClick()
-    .then(() => authUi.onCellClickSuccess())
-    .catch(() => authUi.onCellClickFailure())
+    .then(() => ui.onSignOutSuccess())
+    .catch(() => ui.onSignOutFailure())
 }
 
 module.exports = {
   onSignUp,
   onSignIn,
-  onSignOut,
-  startNewGame,
-  onCellClick
+  onSignOut
+
 }

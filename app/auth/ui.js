@@ -36,36 +36,12 @@ const onSignOutFailure = () => {
   $('#auth-display').html('<p>Could not sign out</p>')
 }
 
-const onNewGameSuccess = (response) => {
-  let test = []
-  test = response.game.cells
-  $('#game-board').show()
-  $('#game-display').html('Let\'s go!')
-  console.log(test)
-}
-
-const onNewGameFailure = () => {
-  $('#auth-display').html('<p>Could not load new game</p>')
-}
-
-const onCellClickSuccess = () => {
-  console.log('why')
-}
-
-const onCellClickFailure = () => {
-  $('#game-display').html('<h1>ERROR</h1>')
-  console.log('failure')
-}
 module.exports = {
   onSignUpSuccess,
   onSignUpFailure,
   onSignInSuccess,
   onSignInFailure,
   onSignOutSuccess,
-  onSignOutFailure,
-  onNewGameSuccess,
-  onNewGameFailure,
-  onCellClickSuccess,
-  onCellClickFailure
+  onSignOutFailure
 
 }

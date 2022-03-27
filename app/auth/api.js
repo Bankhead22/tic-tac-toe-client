@@ -27,29 +27,9 @@ const signOut = () => {
   })
 }
 
-const newGame = () => {
-  return $.ajax({
-    method: 'POST',
-    url: 'https://tic-tac-toe-api-development.herokuapp.com/games',
-    data: '{}',
-    headers: {
-      Authorization: 'Bearer ' + store.user.token
-    }
-  })
-}
-
-const cellClick = (data, id) => {
-  return $.ajax({
-    method: 'PATCH',
-    url: 'https://tic-tac-toe-api-development.herokuapp.com/games/' + id,
-    data
-  })
-}
-
 module.exports = {
   signUp,
   signIn,
-  signOut,
-  newGame,
-  cellClick
+  signOut
+
 }
