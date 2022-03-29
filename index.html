@@ -15,49 +15,56 @@
       <!-- Authorization(sign in/out) -->
       <section>
         <h1>Tic-Tac-Toe</h1>
-        <h3>Sign Up</h3>
-          <form id="sign-up-form">
-            <input name="credentials[email]" type="email" placeholder="Email">
-            <input name="credentials[password]" type="password" placeholder="Enter password">
-            <input name="credentials[password_confirmation]" type="password" placeholder="Re-enter password">
-            <button type="submit">Sign Up</button>
-          </form>
-      
-        <h3>Sign In</h3>
-          <form id="sign-in-form">
-            <input name="credentials[email]" type="email" placeholder="Email">
-            <input name="credentials[password]" type="password" placeholder="Enter password">
-            <button id="sign-in-btn" type="submit">Sign In</button>
-          </form>
 
-          <button id="sign-out-btn">Sign Out</button>
- 
-          <section id="auth-display"></section> 
+        <div class="sign-in">
+          <button class="btn btn-outline-primary" type="button" id="show-sign-in-btn">Log In</button>
+            <form id="sign-in-form">
+              <input name="credentials[email]" type="email" placeholder="Email">
+              <input name="credentials[password]" type="password" placeholder="Enter password">
+              <button id="sign-in-btn" type="submit">Submit</button>
+            </form>
+            <button class="btn btn-outline-primary" id="sign-out-btn">Sign Out</button>
+        </div>
+
+        <div class="sign-up">
+      <!-- Button to display sign in -->
+      <button class="btn btn-outline-secondary" type="button" id="new-user-btn">New User?</button>
+      <!-- sign up form for new users -->
+      <form id="sign-up-form">
+        <input name="credentials[email]" type="email" placeholder="Email">
+        <input name="credentials[password]" type="password" placeholder="Enter password">
+        <input name="credentials[password_confirmation]" type="password" placeholder="Re-enter password">
+        <button type="submit" class="sign-up-btn">Sign Up</button>
+      </form>
+        </div>  
+                  
+        <section id="auth-display"></section> 
       </section>
-
+        
     
-
       <!-- Game board and new/restart game -->
-      <section>
-       <button id="new-game-btn">New Game</button>
-       <section id="game-board">
-          <div class="container">
-              <div data-cell-index="0" class="0 cell"></div>
-              <div data-cell-index="1" class="1 cell"></div>
-              <div data-cell-index="2" class="2 cell"></div>
-              <div data-cell-index="3" class="3 cell"></div>
-              <div data-cell-index="4" class="4 cell"></div>
-              <div data-cell-index="5" class="5 cell"></div>
-              <div data-cell-index="6" class="6 cell"></div>
-              <div data-cell-index="7" class="7 cell"></div>
-              <div data-cell-index="8" class="8 cell"></div>
-          </div>
-          <section id="game-display"></section>
-        </section>
+    <section>
+      <button id="new-game-btn">New Game</button>
 
-        <button id="restart-btn">Restart Game</button>
+      <section id="game-board">
+        <div class="container">
+            <div id="0" class="cell"></div>
+            <div id="1" class="cell"></div>
+            <div id="2" class="cell"></div>
+            <div id="3" class="cell"></div>
+            <div id="4" class="cell"></div>
+            <div id="5" class="cell"></div>
+            <div id="6" class="cell"></div>
+            <div id="7" class="cell"></div>
+            <div id="8" class="cell"></div>
+        </div>
+        <section id="game-display"></section>
+        <section id="results-message"></section>
       </section>
-    </body>
+
+      <button id="restart-btn">Restart Game</button>
+    </section>
+  </body>
 
 
 </html>

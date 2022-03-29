@@ -3,15 +3,20 @@
 
 $font-family: 'Playfair Display', serif;
 $body-bg-color: grey;
-$box-bg-color: lightgrey;
-$box-border-color: white;
-$alt-bg-color: cyan;
+
+
+
 body {
     font-family: "Arial", sans-serif;
 }
 
+button {
+    margin: 5px;
+}
+
 section {
     text-align: center;
+    margin: 3px;
 }
 
 .container {
@@ -32,15 +37,27 @@ section {
     line-height: 100px;
     font-size: 60px;
 }
+
+#sign-in-form {
+    display: none;
+}
+
+#sign-up-form {
+    display: none;
+}
+
 #sign-out-btn {
     display: none;
 }
+
 #new-game-btn {
     display: none;
 }
+
 #restart-btn {
     display: none;
 }
-#game-board{
+
+#game-board {
     display: none;
 }
