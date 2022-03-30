@@ -3,6 +3,7 @@ const api = require('./api.js')
 const ui = require('./ui.js')
 const store = require('../store.js')
 
+// api to start new game
 const onStartNewGame = () => {
   currentMove = 'x'
   gameOver = false
@@ -12,6 +13,7 @@ const onStartNewGame = () => {
     .catch(() => ui.onNewGameFailure())
 }
 
+// api to restart game and clears board
 const onRestartGame = () => {
   currentMove = 'x'
   gameOver = false
@@ -24,41 +26,33 @@ const onRestartGame = () => {
   $('.cell').on('click', onCellClick)
 }
 
+// rules for game
 let currentMove = 'x'
 let gameOver = false
+// empty array for game.cells to populate to
 let gameArr = []
-store.numTurns = 0
 
-const nextMove = () => {
-  if (currentMove !== 'x') {
-    currentMove = 'x'
-  } else {
-    currentMove = 'o'
-  }
-}
+// if currentmove x change to o
+const nextMove = () => { currentMove !== 'x' ? currentMove = 'x' : currentMove = 'o' }
 
 /*
-const winningConditions = [
-    [0, 1, 2],
-    [3, 4, 5],
-    [6, 7, 8],
-    [0, 3, 6],
-    [1, 4, 7],
-    [2, 5, 8],
-    [0, 4, 8],
+winningConditions
+    [0, 1, 2]
+    [3, 4, 5]
+    [6, 7, 8]
+    [0, 3, 6]
+    [1, 4, 7]
+    [2, 5, 8]
+    [0, 4, 8]
     [2, 4, 6]
-]
- board layout
-
-    [0][1][2]
-    [3][4][5]
-    [6][7][8]
 */
 
+// check for winner fn after cell is clicked
 const checkForWinner = (index, value) => {
   gameOver = false
   gameArr = []
-  // populate game array with index of cell which value of 'x' or 'o' is found
+
+  // populate(push) game array with index of cell which value of 'x' or 'o' is found
   for (let i = 0; i < 9; i++) {
     if (store.game.cells[i] === value) {
       gameArr.push(i)
@@ -66,6 +60,8 @@ const checkForWinner = (index, value) => {
   }
   // Check for all possible winning conditions.
   // if 3 in a row highlight red && gameOver = true
+  // disable click function if winner is found
+  // indexOf returns -1 if no value found in targeted index
   if (
     gameArr.indexOf(0) !== -1 &&
     gameArr.indexOf(1) !== -1 &&
@@ -138,9 +134,11 @@ const checkForWinner = (index, value) => {
     $('#2,#4,#6').css('color', 'red')
     $('.cell').off('click')
   }
+  // pass index value and gameover status to update game api as params
   onUpdateGame(index, currentMove, gameOver)
 }
 
+// run if any cell is clicked on game board
 const onCellClick = (event) => {
   // message if cell is taken
   if (event.target.innerHTML !== '') {
@@ -148,18 +146,19 @@ const onCellClick = (event) => {
   }
   // if cell is empty:
   if (event.target.innerHTML === '') {
-    // cell becomes current move then check for winner
+    // cell text becomes current move
     $(event.target).text(currentMove)
-    // game cell value becomes current move
+    // game cell value becomes current move then check for winner
     store.game.cells[event.target.id] = currentMove
-    store.numTurns += 1
-    console.log(store.numTurns)
+    // pass cell index(event.target.id?) and value(currentmove)
     checkForWinner(event.target.id, currentMove)
+    // change current move then display their turn
     nextMove()
-    $('#game-display').text("It's " + currentMove + "'s turn!")
+    $('#game-display').text('It\'s ' + currentMove + '\'s turn!')
   }
 }
 
+// update game api with data from check for winner
 const onUpdateGame = (index, value, over) => {
   api
     .updateGame(index, value, over)

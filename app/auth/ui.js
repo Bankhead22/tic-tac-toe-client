@@ -1,7 +1,7 @@
 const store = require('../store.js')
 
 const onSignUpSuccess = () => {
-  $('#auth-display').html('<p>User signed up successfully</p>')
+  $('#auth-display').text('User signed up successfully')
   $('#sign-up-form').hide()
   $('#new-user-btn').hide()
   $('form').trigger('reset')
@@ -12,23 +12,23 @@ const onSignUpFailure = () => {
 }
 
 const onSignInSuccess = (response) => {
-  $('#auth-display').html('<p>User signed in successfully</p>')
+  $('#auth-display').text('User signed in successfully')
   $('form').trigger('reset')
   $('#sign-in-form').hide()
+  $('#sign-up-form').hide()
   $('#show-sign-in-btn').hide()
   $('#new-user-btn').hide()
   $('#sign-out-btn').show()
   $('#new-game-btn').show()
-  console.log(response)
   store.user = response.user
 }
 
 const onSignInFailure = () => {
-  $('#auth-display').html('<p>Error while signing in</p>')
+  $('#auth-display').text('Error while signing in')
 }
 
 const onSignOutSuccess = () => {
-  $('#auth-display').html('<p>User Signed out successfully</p>')
+  $('#auth-display').text('User Signed out successfully')
   $('form').trigger('reset')
   $('#show-sign-in-btn').show()
   $('#sign-out-btn').hide()
@@ -36,11 +36,14 @@ const onSignOutSuccess = () => {
   $('#new-game-btn').hide()
   $('#restart-btn').hide()
   $('#new-user-btn').show()
-
+  $('#score-board-x').text(0)
+  $('#score-board-o').text(0)
+  $('#show-sign-in-btn').text('Log In')
+  $('#new-user-btn').text('New User?')
 }
 
 const onSignOutFailure = () => {
-  $('#auth-display').html('<p>Could not sign out</p>')
+  $('#auth-display').text('Could not sign out')
 }
 
 module.exports = {

@@ -1,13 +1,8 @@
 @import '~bootstrap/scss/bootstrap';
-@import url('https://fonts.googleapis.com/css2?family=Playfair+Display&display=swap');
-
-$font-family: 'Playfair Display', serif;
-$body-bg-color: grey;
-
-
 
 body {
     font-family: "Arial", sans-serif;
+    text-align: center
 }
 
 button {
@@ -22,7 +17,7 @@ section {
 .container {
     display: grid;
     grid-template-columns: repeat(3, auto);
-    width: 306px;
+    width: 300px;
     margin: 50px auto;
 }
 
@@ -30,12 +25,31 @@ section {
     font-family: "Permanent Marker", cursive;
     width: 100px;
     height: 100px;
-    box-shadow: 0 0 0 1px #333333;
-    border: 1px solid #333333;
+    box-shadow: 0 0 0 1px black;
+    border: 1px solid black;
     cursor: pointer;
-
     line-height: 100px;
-    font-size: 60px;
+    font-size: 55px;
+}
+
+.score-board {
+    text-align: center;
+    padding: 25px;
+    display: inline-block;
+}
+
+.player {
+    display: inline-block;
+    padding: 15px;
+}
+
+.player h5 {
+    font-weight: bold;
+}
+
+.player-score {
+    border: 3px solid black;
+    padding: 20px;
 }
 
 #sign-in-form {

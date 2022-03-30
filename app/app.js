@@ -8,21 +8,27 @@ const signUpForm = document.querySelector('#sign-up-form')
 $(() => {
   // buttons to show/hide auth buttons
   $('#show-sign-in-btn').on('click', () => {
-    if (signInForm.style.display === 'none') {
+    $('#show-sign-in-btn').html('Close')
+
+    if (signInForm.style.display === '') {
       signInForm.style.display = 'block'
-      $('#show-sign-in-btn').hide()
-    } else {
-      signInForm.style.display = 'none'
-    } $('#auth-display').text('')
-    $('#show-sign-in-btn').text('Log In')
+    } else if (signInForm.style.display !== '') {
+      $('#auth-display').text('')
+      $('#show-sign-in-btn').text('Log In')
+      signInForm.style.display = ''
+    }
   })
 
   $('#new-user-btn').on('click', () => {
-    if (signUpForm.style.display === 'none') {
+    $('#new-user-btn').text('Close')
+
+    if (signUpForm.style.display === '') {
       signUpForm.style.display = 'block'
-    } else {
-      signUpForm.style.display = 'none'
-    } $('#auth-display').text('')
+    } else if (signUpForm.style.display !== '') {
+      $('#new-user-btn').text('New User?')
+      $('#auth-display').text('')
+      signUpForm.style.display = ''
+    }
   })
 
   // Auth event listeners
