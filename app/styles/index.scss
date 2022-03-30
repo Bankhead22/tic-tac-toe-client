@@ -1,12 +1,80 @@
 @import '~bootstrap/scss/bootstrap';
 
+// animation for rainbow header
+.rainbow {
+   /* Chrome, Safari, Opera */
+  -webkit-animation: rainbow 5s infinite; 
+  
+  /* Internet Explorer */
+  -ms-animation: rainbow 5s infinite;
+  
+  /* Standard Syntax */
+  animation: rainbow 5s infinite; 
+}
+
+/* Chrome, Safari, Opera */
+@-webkit-keyframes rainbow{
+   0%{color: #ff0000;}	
+  10%{color: #ffc300;}	
+	20%{color: #feff00;}
+  30%{color: #a2ff00;}
+	40%{color: #00ff00;}
+  50%{color: #82ffff;}
+	60%{color: #1e2ede;}
+  70%{color: #ce11ff;}
+  80%{color: #ff83ff;}
+  90%{color: #ff0000;}
+	100%{color: #ffc300;}
+}
+
+/* Internet Explorer */
+@-ms-keyframes rainbow{
+     0%{color: #ff0000;}	
+  10%{color: #ffc300;}	
+	20%{color: #feff00;}
+  30%{color: #a2ff00;}
+	40%{color: #00ff00;}
+  50%{color: #82ffff;}
+	60%{color: #1e2ede;}
+  70%{color: #ce11ff;}
+  80%{color: #ff83ff;}
+  90%{color: #ff0000;}
+	100%{color: #ffc300;}
+}
+
+/* Standard Syntax */
+@keyframes rainbow{
+    0%{color: #ff0000;}	
+  10%{color: #ffc300;}	
+	20%{color: #feff00;}
+  30%{color: #a2ff00;}
+	40%{color: #00ff00;}
+  50%{color: #82ffff;}
+	60%{color: #1e2ede;}
+  70%{color: #ce11ff;}
+  80%{color: #ff83ff;}
+  90%{color: #ff0000;}
+	100%{color: #ffc300;}
+}
+
+h1 {
+    font-weight: 500;
+    text-align: center;
+    font-size: 85px;
+    
+}
+
 body {
-    font-family: "Arial", sans-serif;
-    text-align: center
+    background-color: #fff; 
+background-image: 
+linear-gradient(90deg, transparent 79px, #abced4 79px, #abced4 81px, transparent 81px),
+linear-gradient(#eee .1em, transparent .1em);
+background-size: 100% 1.2em;
 }
 
 button {
     margin: 5px;
+    margin-bottom: 2px;
 }
 
 section {
@@ -18,7 +86,7 @@ section {
     display: grid;
     grid-template-columns: repeat(3, auto);
     width: 300px;
-    margin: 50px auto;
+    margin: 40px auto;
 }
 
 .cell {

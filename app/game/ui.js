@@ -3,6 +3,7 @@ const store = require('../store')
 // variables for scoreboard scores
 let scoreX = 0
 let scoreO = 0
+let scoreTie = 0
 
 const onNewGameSuccess = (response) => {
   alert('Get 3 X\'s or O\'s in a row to win!')
@@ -13,6 +14,7 @@ const onNewGameSuccess = (response) => {
   $('#auth-display').text('')
   $('#score-board-x').text(0)
   $('#score-board-o').text(0)
+  $('#score-board-tie').text(0)
   store.game = response.game
 }
 
@@ -52,6 +54,8 @@ const onUpdateGameSuccess = (response) => {
     $('#game-display').text('')
     $('#results-message').text('It\'s a tie!')
     $('#restart-btn').text('New Game')
+    scoreTie++
+    $('#score-board-tie').text(scoreTie)
     $('.cell').off('click')
   }
   if (response.game.over === true) {
