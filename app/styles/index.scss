@@ -1,6 +1,6 @@
 @import '~bootstrap/scss/bootstrap';
 
-// animation for rainbow header
+/* animation for rainbow header */
 .rainbow {
    /* Chrome, Safari, Opera */
   -webkit-animation: rainbow 5s infinite; 
@@ -98,6 +98,14 @@ section {
     cursor: pointer;
     line-height: 100px;
     font-size: 55px;
+}
+.cell:hover {
+  background-color: #D5D5D5;
+}
+
+#top-row {
+  border-bottom: 1px solid black;
+  box-shadow: 0 0 0 1px black;
 }
 
 .score-board {
