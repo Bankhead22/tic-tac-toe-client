@@ -1,0 +1,153 @@
+@import '~bootstrap/scss/bootstrap';
+
+/* animation for rainbow header */
+.rainbow {
+   /* Chrome, Safari, Opera */
+  -webkit-animation: rainbow 5s infinite; 
+  
+  /* Internet Explorer */
+  -ms-animation: rainbow 5s infinite;
+  
+  /* Standard Syntax */
+  animation: rainbow 5s infinite; 
+}
+
+/* Chrome, Safari, Opera */
+@-webkit-keyframes rainbow{
+   0%{color: #ff0000;}	
+  10%{color: #ffc300;}	
+	20%{color: #feff00;}
+  30%{color: #a2ff00;}
+	40%{color: #00ff00;}
+  50%{color: #82ffff;}
+	60%{color: #1e2ede;}
+  70%{color: #ce11ff;}
+  80%{color: #ff83ff;}
+  90%{color: #ff0000;}
+	100%{color: #ffc300;}
+}
+
+/* Internet Explorer */
+@-ms-keyframes rainbow{
+     0%{color: #ff0000;}	
+  10%{color: #ffc300;}	
+	20%{color: #feff00;}
+  30%{color: #a2ff00;}
+	40%{color: #00ff00;}
+  50%{color: #82ffff;}
+	60%{color: #1e2ede;}
+  70%{color: #ce11ff;}
+  80%{color: #ff83ff;}
+  90%{color: #ff0000;}
+	100%{color: #ffc300;}
+}
+
+/* Standard Syntax */
+@keyframes rainbow{
+    0%{color: #ff0000;}	
+  10%{color: #ffc300;}	
+	20%{color: #feff00;}
+  30%{color: #a2ff00;}
+	40%{color: #00ff00;}
+  50%{color: #82ffff;}
+	60%{color: #1e2ede;}
+  70%{color: #ce11ff;}
+  80%{color: #ff83ff;}
+  90%{color: #ff0000;}
+	100%{color: #ffc300;}
+}
+
+h1 {
+    font-weight: 500;
+    text-align: center;
+    font-size: 85px;
+    
+}
+
+body {
+    background-color: #fff; 
+background-image: 
+linear-gradient(90deg, transparent 79px, #abced4 79px, #abced4 81px, transparent 81px),
+linear-gradient(#eee .1em, transparent .1em);
+background-size: 100% 1.2em;
+}
+
+button {
+    margin: 5px;
+    margin-bottom: 2px;
+}
+
+section {
+    text-align: center;
+    margin: 3px;
+}
+
+.container {
+    display: grid;
+    grid-template-columns: repeat(3, auto);
+    width: 300px;
+    margin: 40px auto;
+}
+
+.cell {
+    font-family: "Permanent Marker", cursive;
+    width: 100px;
+    height: 100px;
+    box-shadow: 0 0 0 1px black;
+    border: 1px solid black;
+    cursor: pointer;
+    line-height: 100px;
+    font-size: 55px;
+}
+.cell:hover {
+  background-color: #D5D5D5;
+}
+
+#top-row {
+  border-bottom: 1px solid black;
+  box-shadow: 0 0 0 1px black;
+}
+
+.score-board {
+    text-align: center;
+    padding: 25px;
+    display: inline-block;
+}
+
+.player {
+    display: inline-block;
+    padding: 15px;
+}
+
+.player h5 {
+    font-weight: bold;
+}
+
+.player-score {
+    border: 3px solid black;
+    padding: 20px;
+}
+
+#sign-in-form {
+    display: none;
+}
+
+#sign-up-form {
+    display: none;
+}
+
+#sign-out-btn {
+    display: none;
+}
+
+#new-game-btn {
+    display: none;
+}
+
+#restart-btn {
+    display: none;
+}
+
+#game-board {
+    display: none;
+}

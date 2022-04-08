@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html>
+    <head>
+      <title>Tic-tac-toe</title>
+      <meta name="viewport" content="width=device-width, initial-scale=1">
+
+      <!-- Do not add `link` tags-->
+      <link rel="shortcut icon" type="image/x-icon" href="favicon.ico">
+
+      <!-- Do not add `script` tags-->
+      <script src="public/vendor.js" type="text/javascript" charset="utf-8" defer></script>
+      <script src="public/application.js" type="text/javascript" charset="utf-8" defer></script>
+    </head>
+    <body>
+       <header>
+          <h1 class="rainbow">Tic-Tac-Toe</h1>
+        </header>
+
+      <!-- Authorization(sign in/out) -->
+      <section>
+
+        <!-- Display login form/button -->
+        <div class="sign-in">
+
+          <button class="btn btn-outline-primary" type="button" id="show-sign-in-btn">Log In</button>
+
+            <form id="sign-in-form">
+              <input name="credentials[email]" type="email" placeholder="Email">
+              <input name="credentials[password]" type="password" placeholder="Enter password">
+              <button class="btn btn-outline-primary" id="sign-in-btn" type="submit">Log In</button>
+            </form>
+
+            <button class="btn btn-outline-secondary" id="sign-out-btn">Sign Out</button>
+
+        </div>
+        
+        <!-- Display Sign up form/button -->
+        <div class="sign-up">
+
+          <button class="btn btn-outline-secondary" type="button" id="new-user-btn">New User?</button>
+        
+          <form id="sign-up-form">
+            <input name="credentials[email]" type="email" placeholder="Email">
+            <input name="credentials[password]" type="password" placeholder="Enter password">
+            <input name="credentials[password_confirmation]" type="password" placeholder="Re-enter password">
+            <button type="submit" class="btn btn-outline-secondary" id="sign-up-btn">Sign Up</button>
+          </form>
+
+        </div>  
+
+    <!-- Sign in success/fail messages -->
+    <section id="auth-display"></section> 
+
+      </section>
+        
+    <!-- Game board and new/restart game buttons-->
+    <section>
+
+      <button class="btn btn-outline-success" id="new-game-btn">New Game</button>
+
+      <button class="btn btn-outline-success" id="restart-btn">Restart Game</button>
+
+      <section id="game-board">
+
+        <div class="container">
+            <div id="0" class="cell"></div>
+            <div id="1" class="cell"></div>
+            <div id="2" class="cell"></div>
+            <div id="3" class="cell"></div>
+            <div id="4" class="cell"></div>
+            <div id="5" class="cell"></div>
+            <div id="6" class="cell"></div>
+            <div id="7" class="cell"></div>
+            <div id="8" class="cell"></div>
+        </div>
+
+        <!-- Move display and winner results -->
+        <section id="game-display"></section>
+        <section id="results-message"></section>
+        
+        <!-- Score board for x and o wins -->
+        <section class="score-board">
+
+          <div class="player">
+            <h5>Player X</h5>
+            <div id="score-board-x" class="player-score"></div>
+          </div>
+
+          <div class="player">
+            <h5>Player O</h5>
+            <div id="score-board-o" class="player-score"></div>
+          </div>
+
+          <div class="player">
+            <h5>Tie</h5>
+            <div id="score-board-tie" class="player-score"></div>
+          </div>
+          
+        </section>     
+
+      </section>
+    </section>  
+  </body>
+</html>
