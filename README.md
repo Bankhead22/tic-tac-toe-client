@@ -39,7 +39,7 @@ This is a single page application (SPA) that allows a player to play tic-tac-toe
         <li><a href="#installation">Installation</a></li>
       </ul>
     </li>
-    <li><a href="#unsolved-problems/future-features">Unsolved Problems/Future Features</a></li>
+    <li><a href="#future-features">Future Features</a></li>
     <li><a href="#contributing">Contributing</a></li>
     <li><a href="#license">License</a></li>
     <li><a href="#contact">Contact</a></li>
@@ -118,12 +118,13 @@ To play the deployed version of this application, click this [link](https://bank
 
 
 
-## Unsolved Problems/Future Features
-### Future Features
- * As a user, I want to track how many games I played.
- * As a user, I want to change my password. 
- * As a user, I want to check how many games I have played.
+## Future Features
+* As a user, I want to track and view how many games I have played.
+* As a user I want to vew past games played and past scores.
+* As a user, I want to change my password. 
+* Store score board information to the server.
 * Add an AI to be able to play against the user.
+* Add easy and hard mode to the AI.
 * Add better styling to game board and player markers.
 
 <p align="right">(<a href="#top">back to top</a>)</p>
